@@ -13,9 +13,15 @@
 local anchorX = 0.5					-- 좌~우 : 0~1
 local anchorY = 0.5					-- 상~하 : 0~1
 local statusBarType = 1				-- 상태바 : 1 default, 2 dark, 3 translucent, 4 hidden
-local fontPath = "resource/font/"
 
-_appFont = { fontPath.."NanumGothic.ttf", fontPath.."NanumMyeongjo.ttf" }	-- 사용시 _appFont[1] or _appFont[2] / index는 1부터 시작합니다
+-- 리소스 경로 설정
+_pathFont = "resource/font/"
+_pathImage = "resource/image/"
+_pathSound = "resource/sound/"
+
+-- 공통 폰트 설정
+_appFont = { _pathFont.."NanumGothic.ttf", _pathFont.."NanumMyeongjo.ttf" }	-- 사용시 _appFont[1] or _appFont[2] / index는 1부터 시작합니다
+
 
 -- -------------------------------------------------------------------------------------------- --
 -- 기본 세팅 고정값

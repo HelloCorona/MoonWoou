@@ -23,8 +23,11 @@ end
 -- 초기화
 function initValues()
 	-- 점수
-	score = display.newText(0, display.contentCenterX, display.contentHeight / 5 * 4 + display.contentHeight / 5 / 2, _appFont[1], 150)	-- 공통세팅의 폰트를 가져옵니다.
+	score = display.newText(0, _appWidth / 2, _appHeight / 5 * 4 + _appHeight / 5 / 2, _appFont[1], 150)	-- 공통세팅의 폰트를 가져옵니다.
 	score:setTextColor(0.8, 0.2, 0.2, 1)
+
+	soundPaddle = audio.loadSound(_pathSound.."shoot.wav")
+	soundBrick = audio.loadSound(_pathSound.."explo.wav")
 end
 
 -- 물리엔진 세팅
@@ -33,7 +36,7 @@ function setUpPhysics()
 	physics = require("physics")  
 	physics.start()
 	physics.setGravity(0, 0) 			-- 중력값 (x, y) : units of m/s2
-	physics.setDrawMode("normal")   	-- normal, hybrid, debug
+	physics.setDrawMode("hybrid")   	-- normal, hybrid, debug
 end
 
 -- Ball 생성
@@ -56,6 +59,9 @@ function createBall()
 			if(event.other.type == "brickDestory") then
 				event.other:removeSelf()
 				
+				-- 블럭 제거 효과음 재생
+				audio.play( soundBrick )
+
 				-- 남은 블럭 개수
 				numBricks = numBricks - 1	
 
@@ -84,6 +90,11 @@ function createBall()
 				-- 지정된 시간 후 실행
 				timer.performWithDelay(1500, onTimerComplete , 1)
 			end
+
+			if(event.other.type == "paddle") then
+				-- 패드 반사 효과음 재생
+				audio.play( soundPaddle )
+			end
 		end
 	end
 
@@ -110,11 +121,11 @@ end
 
 -- Paddle 생성
 function createPaddle()
-	local paddleImage = "resource/image/paddle.png"	-- 해당폴더에 패드의 psd파일도 있습니다. 수정해서 사용하세요
+	local paddleImage = _pathImage.."paddle.png"	-- 해당폴더에 패드의 psd파일도 있습니다. 수정해서 사용하세요
 	local paddleOutLine = graphics.newOutline( 2,  paddleImage)	-- png파일의 투명부분을 아웃라인으로 잡아서 인식합니다.
 
 	paddle = display.newImage( paddleImage )
-	paddle.x, paddle.y = display.contentWidth / 2, display.contentHeight / 5 * 4 - paddle.contentHeight - 5
+	paddle.x, paddle.y = _appWidth / 2, _appHeight / 5 * 4 - paddle.contentHeight - 5
 	
 	physics.addBody(paddle, "static", {outline=paddleOutLine, friction=0, bounce=1.05})	-- bounce를 약간 줘서(1.05) 속도를 높입니다.
 
@@ -122,6 +133,8 @@ function createPaddle()
 		-- 좌우로만 이동하기 위해서 패드의 x값만 적용합니다.
 		paddle.x = event.x 	
 	end
+
+	paddle.type = "paddle"
 
 	Runtime:addEventListener("touch", movePaddle)
 end

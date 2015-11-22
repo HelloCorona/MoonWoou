@@ -7,14 +7,16 @@
 -- --------------------------------------------------------------------------------------------	--
 
 local aspectRatio = display.pixelHeight / display.pixelWidth
+local width = 720
+local height = 1280
 
 application =
 {
 	content =
 	{
 		fps = 60,
-		width = aspectRatio > 1.5 and 720 or math.ceil( 1280 / aspectRatio ),
-		height = aspectRatio < 1.5 and 1280 or math.ceil( 720 * aspectRatio ),
+		width = aspectRatio > 1.5 and width or math.ceil( height / aspectRatio ),
+		height = aspectRatio < 1.5 and height or math.ceil( width * aspectRatio ),
 		scale = "letterbox",
 		xAlign = "center",
 		yAlign = "center",

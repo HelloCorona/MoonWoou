@@ -16,11 +16,7 @@ Corona를 처음 접하거나 초보자들을 위한 샘플 소스를 제공하�
 ```
 
 ## 프로젝트
-- BounceBall : 공 튕기기
 - BreakBricks : 블럭을 격파
-- GalaxyBullets : 터렛에서 미사일을 발사해 적기체를 제거
-- MultiPuck : 멀티터치 테스트용 샘플
-
 
 ## 라이브러리
 개인 모듈

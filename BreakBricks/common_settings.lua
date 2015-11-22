@@ -20,8 +20,7 @@ _pathImage = "resource/image/"
 _pathSound = "resource/sound/"
 
 -- 공통 폰트 설정
-_appFont = { _pathFont.."NanumGothic.ttf", _pathFont.."NanumMyeongjo.ttf" }	-- 사용시 _appFont[1] or _appFont[2] / index는 1부터 시작합니다
-
+_appFont = { native.systemFont, _pathFont.."NanumGothic.ttf", _pathFont.."NanumMyeongjo.ttf" }	-- 사용시 _appFont[1] or _appFont[2] / index는 1부터 시작합니다
 
 -- -------------------------------------------------------------------------------------------- --
 -- 기본 세팅 고정값

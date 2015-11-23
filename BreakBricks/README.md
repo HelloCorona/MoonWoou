@@ -8,9 +8,7 @@
 ```
 
 ## 플레이영상
-<a href="https://www.youtube.com/watch?v=VKG5WjwI1rY&feature=youtu.be" target="_blank"><img src="https://www.youtube.com/watch?v=VKG5WjwI1rY&feature=youtu.be/0.jpg" 
-alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
-[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/VKG5WjwI1rY/0.jpg)](http://www.youtube.com/watch?v=VKG5WjwI1rY)
+[![플레이영상](http://img.youtube.com/vi/VKG5WjwI1rY/0.jpg)](http://www.youtube.com/watch?v=VKG5WjwI1rY)
 
 ## 기능
 - Intro > Menu > Game > Menu로 Scene이 변경됩니다.

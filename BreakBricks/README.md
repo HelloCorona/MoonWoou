@@ -17,7 +17,7 @@
 - 물리엔진에 중력 1m/s2로 설정하여 공이 아래로 조금 더 빠르게 떨어집니다.
 
 ## 플레이영상
-[![플레이영상](http://img.youtube.com/vi/VKG5WjwI1rY/0.jpg)](http://www.youtube.com/watch?v=VKG5WjwI1rY)
+[![플레이영상](http://img.youtube.com/vi/42s0FRE4cuk/0.jpg)](http://www.youtube.com/watch?v=42s0FRE4cuk)
 
 ## 링크
 [MoonWoou Studio](www.seoljoo.com)

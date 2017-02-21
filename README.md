@@ -25,4 +25,4 @@ Corona를 처음 접하거나 초보자들을 위한 샘플 소스를 제공하�
 ```
 
 ## 링크
-[MoonWoou Studio](www.seoljoo.com)
+[MoonWoou Studio](http://moonwoou.com)
